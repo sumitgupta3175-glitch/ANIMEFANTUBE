@@ -3,41 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeFanTube - Watch Anime</title>
+    <title>AnimeFanTube - Watch Anime Hindi Dubbed</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; margin: 0; }
+        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 15px; margin: 0; }
         .container { max-width: 800px; margin: auto; }
-        .player { width: 100%; aspect-ratio: 16/9; border: 2px solid #1e90ff; border-radius: 10px; margin: 20px 0; }
-        .ad-slot { margin: 20px 0; min-height: 50px; background: #111; border-radius: 5px; }
-        .btn { background: #ff4444; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 18px; cursor: pointer; font-weight: bold; width: 100%; }
+        .player-box { width: 100%; aspect-ratio: 16/9; border: 2px solid #1e90ff; border-radius: 10px; overflow: hidden; margin: 15px 0; }
+        .player-box iframe { width: 100%; height: 100%; border: none; }
+        .ep-btns { display: flex; justify-content: center; gap: 10px; margin: 15px 0; }
+        .btn-ep { background: #333; color: #fff; border: 1px solid #1e90ff; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        .btn-ep.active { background: #1e90ff; }
+        .dl-btn { background: #ff4444; color: white; border: none; padding: 15px; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; width: 100%; }
+        .ad-slot { margin: 15px 0; min-height: 50px; background: #111; }
+        .disclaimer { font-size: 12px; color: #aaa; text-align: justify; margin-top: 30px; border-top: 1px solid #333; padding-top: 10px; }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>ANIME<span style="color:#1e90ff">FANTUBE</span></h1>
+    <p>Watch Latest Anime Recaps in Hindi</p>
 
     <div class="ad-slot">
         </div>
 
-    <iframe class="player" src="https://drive.google.com/file/d/1JGQZsEsnV3rCxol4scspTZkT7SS88n98/preview" allowfullscreen></iframe>
+    <div class="player-box">
+        <iframe id="main-player" src="https://drive.google.com/file/d/1JGQZsEsnV3rCxol4scspTZkT7SS88n98/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="ep-btns">
+        <button class="btn-ep active" onclick="changeVideo('1JGQZsEsnV3rCxol4scspTZkT7SS88n98', this)">EP 01</button>
+        <button class="btn-ep" onclick="changeVideo('19cNfNi9riQkpNi5vaJPHE0yg1dt6eeJi', this)">EP 02</button>
+    </div>
 
     <div class="ad-slot">
         </div>
 
-    <button id="dl-btn" class="btn" onclick="handleDL()">📥 Download Episode Full HD</button>
+    <button id="dl-btn" class="dl-btn" onclick="handleDownload()">📥 Download Episode Full HD</button>
+
+    <div class="disclaimer">
+        <strong>Disclaimer:</strong> AnimeFanTube does not store any files on its server. All contents are provided by non-affiliated third parties. This site is for educational/entertainment purposes only. If you own the copyrights, please contact the original file host.
+    </div>
 
     <script>
-        var clicks = 0;
-        var smartlink = "YAHAN_APNA_SMARTLINK_DAALEIN"; // ID: 29255756 link
+        var currentVid = "1JGQZsEsnV3rCxol4scspTZkT7SS88n98";
+        var clickCount = 0;
+        var sl = "YAHAN_APNA_SMARTLINK_DAALEIN"; // Adsterra Smartlink
 
-        function handleDL() {
-            if(clicks == 0) {
-                window.open(smartlink, '_blank');
-                clicks++;
-                document.getElementById('dl-btn').innerText = "✅ Click Again to Download";
-                document.getElementById('dl-btn').style.background = "#28a745";
+        function changeVideo(id, btn) {
+            document.getElementById('main-player').src = "https://drive.google.com/file/d/" + id + "/preview";
+            document.querySelectorAll('.btn-ep').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentVid = id; clickCount = 0;
+        }
+
+        function handleDownload() {
+            if(clickCount == 0) {
+                window.open(sl, '_blank');
+                clickCount++;
+                document.getElementById('dl-btn').innerText = "✅ Click Again to Confirm Download";
             } else {
-                window.open("https://drive.google.com/uc?export=download&id=1JGQZsEsnV3rCxol4scspTZkT7SS88|8n98", "_blank");
+                window.open("https://drive.google.com/uc?export=download&id=" + currentVid, '_blank');
             }
         }
     </script>
@@ -45,4 +69,3 @@
     </div>
 </body>
 </html>
-
