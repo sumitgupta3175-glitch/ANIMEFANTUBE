@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Verification - AnimeFanTube</title>
+    <style>
+        body { background: #000; color: #fff; text-align: center; font-family: sans-serif; padding: 40px 20px; }
+        .box { background: #111; padding: 30px; border-radius: 20px; border: 1px solid #1e90ff; max-width: 400px; margin: auto; box-shadow: 0 0 20px rgba(30,144,255,0.2); }
+        #timer { font-size: 50px; color: #1e90ff; font-weight: bold; margin: 20px 0; }
+        .btn-final { background: #28a745; color: #fff; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; display: none; font-size: 18px; }
+        .ad-space { margin: 20px 0; min-height: 250px; background: #080808; display: flex; align-items: center; justify-content: center; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Verifying Your Request...</h2>
+        <p>Please wait for the timer to finish.</p>
+        
+        <div class="ad-space">
+            <script type="text/javascript">
+                atOptions = { 'key' : '10ed9aeface00126e5e4a704af783e8c', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/10ed9aeface00126e5e4a704af783e8c/invoke.js"></script>
+        </div>
+
+        <div id="timer">15</div>
+        <a href="#" id="final-btn" class="btn-final">📥 DOWNLOAD NOW</a>
+    </div>
+
+    <script>
+        let timeLeft = 15;
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileId = urlParams.get('id');
+
+        let downloadTimer = setInterval(() => {
+            timeLeft--;
+            document.getElementById('timer').innerText = timeLeft;
+            if(timeLeft <= 0) {
+                clearInterval(downloadTimer);
+                document.getElementById('timer').style.display = 'none';
+                let btn = document.getElementById('final-btn');
+                btn.style.display = 'inline-block';
+                btn.href = "https://drive.google.com/uc?export=download&id=" + fileId;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
