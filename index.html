@@ -9,50 +9,31 @@
 
     <style>
         * { box-sizing: border-box; }
-        body { background-color: #000; color: #fff; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-align: center; padding: 10px; margin: 0; overflow-x: hidden; }
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 10px; margin: 0; overflow-x: hidden; }
         .container { max-width: 600px; margin: auto; }
         
-        /* HEADER & SEARCH */
-        .header { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; margin-bottom: 5px; gap: 10px; }
-        .logo { font-size: 18px; font-weight: bold; flex-shrink: 0; }
-        .search-container { position: relative; display: flex; align-items: center; flex-grow: 1; justify-content: flex-end; }
-        .search-input { 
-            background: #1a1a1a; border: 1px solid #1e90ff; color: white; padding: 7px 35px 7px 12px; 
-            border-radius: 20px; font-size: 12px; outline: none; width: 100%; max-width: 150px; transition: 0.3s;
-        }
-        .search-input:focus { max-width: 200px; border-color: #fff; }
-        .search-btn { position: absolute; right: 10px; background: none; border: none; color: #1e90ff; cursor: pointer; padding: 0; }
-
-        /* PLAYER */
-        .tagline { color: #aaa; font-size: 12px; margin-bottom: 15px; }
-        .player-box { width: 100%; aspect-ratio: 16/9; border: 2px solid #1e90ff; border-radius: 12px; overflow: hidden; margin-bottom: 10px; background: #000; box-shadow: 0 0 15px rgba(30, 144, 255, 0.2); }
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; margin-bottom: 5px; }
+        .logo { font-size: 18px; font-weight: bold; color: #1e90ff; }
+        
+        /* Player */
+        .player-box { width: 100%; aspect-ratio: 16/9; border: 2px solid #1e90ff; border-radius: 12px; overflow: hidden; margin-bottom: 10px; background: #111; }
         .player-box iframe { width: 100%; height: 100%; border: none; }
         
-        /* ENGAGEMENT */
+        /* Real Stats Bar */
         .stats-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #111; border-radius: 10px; margin-bottom: 12px; font-size: 13px; border: 1px solid #222; }
-        .live-view { color: #ff4444; font-weight: bold; display: flex; align-items: center; gap: 5px; }
-        .interact-btns { display: flex; gap: 15px; }
-        .interact-btns i { cursor: pointer; color: #ccc; }
-        .interact-btns i:hover { color: #1e90ff; }
+        .tracking-label { color: #28a745; font-weight: bold; display: flex; align-items: center; gap: 5px; }
 
-        /* BUTTONS */
+        /* Buttons */
         .ep-btns { display: flex; justify-content: center; gap: 8px; margin-bottom: 15px; flex-wrap: wrap; }
-        .btn-ep { background: #1a1a1a; color: #fff; border: 1px solid #1e90ff; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .btn-ep { background: #1a1a1a; color: #fff; border: 1px solid #1e90ff; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
         .btn-ep.active { background: #1e90ff; color: #000; }
         
         .yt-btn { background: #ff0000; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 10px; font-weight: bold; margin-bottom: 15px; font-size: 14px; }
         .dl-btn { background: #ff4444; color: white; border: none; padding: 15px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; }
-        .dl-btn:active { transform: scale(0.98); }
         
-        /* AD BOXES */
-        .ad-container { margin: 12px 0; min-height: 50px; background: rgba(255,255,255,0.03); border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        
-        /* COMMENTS */
-        .comment-section { background: #0a0a0a; padding: 15px; border-radius: 10px; text-align: left; border: 1px solid #111; }
-        .comment-item { border-bottom: 1px solid #1a1a1a; padding: 8px 0; }
-        .comment-item:last-child { border: none; }
-
-        .disclaimer-box { font-size: 10px; color: #555; margin-top: 30px; padding: 20px; border-top: 1px solid #111; line-height: 1.4; }
+        .ad-container { margin: 12px 0; min-height: 50px; background: rgba(255,255,255,0.03); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .disclaimer-box { font-size: 10px; color: #555; margin-top: 30px; padding: 20px; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
@@ -62,14 +43,9 @@
 <div class="container">
     
     <header class="header">
-        <div class="logo">ANIME<span style="color:#1e90ff">FANTUBE</span></div>
-        <form class="search-container" onsubmit="return doSearch(event)">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search Episodes...">
-            <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+        <div class="logo">ANIME<span style="color:#fff">FANTUBE</span></div>
+        <a href="https://www.youtube.com/@KyoPop_anime" target="_blank" style="color:#ff0000; font-size: 22px;"><i class="fa-brands fa-youtube"></i></a>
     </header>
-
-    <div class="tagline">Official Fan Site • Hindi Dubbed • @KyoPop_anime</div>
 
     <div class="ad-container">
         <script type="text/javascript">
@@ -83,15 +59,14 @@
     </div>
 
     <div class="stats-bar">
-        <div class="live-view"><i class="fa-solid fa-circle" style="font-size:8px;"></i> <span id="view-count">512</span> Watching</div>
+        <div class="tracking-label"><i class="fa-solid fa-signal"></i> Live Tracking Active</div>
         <div class="interact-btns">
-            <i class="fa-solid fa-thumbs-up" onclick="alert('Thanks for liking!')"> 1.4k</i>
-            <i class="fa-solid fa-share-nodes" onclick="copyLink()"></i>
+            <i class="fa-solid fa-share-nodes" style="cursor:pointer;" onclick="copyLink()"> Share</i>
         </div>
     </div>
 
     <a href="https://www.youtube.com/@KyoPop_anime" target="_blank" class="yt-btn">
-        <i class="fa-brands fa-youtube"></i> SUBSCRIBE KYOPOP ANIME
+        <i class="fa-brands fa-youtube"></i> SUBSCRIBE FOR NEW EPISODES
     </a>
 
     <div class="ep-btns">
@@ -106,20 +81,10 @@
         <script type="text/javascript" src="https://www.highperformanceformat.com/10ed9aeface00126e5e4a704af783e8c/invoke.js"></script>
     </div>
 
-    <button id="dl-btn" class="dl-btn" onclick="startDL()">📥 DOWNLOAD FULL HD EPISODE</button>
-
-    <div class="comment-section">
-        <h3 style="margin:0 0 10px 0; font-size: 14px; color:#1e90ff;">Top Discussions</h3>
-        <div class="comment-item" style="font-size: 12px;">
-            <b>@AnimeLover:</b> Bro next part please! Quality is OP. 🔥
-        </div>
-        <div class="comment-item" style="font-size: 12px;">
-            <b>@KyoPop_Fan:</b> Best Hindi dub recap ever!
-        </div>
-    </div>
+    <button id="dl-btn" class="dl-btn" onclick="startDL()">📥 DOWNLOAD FULL HD</button>
 
     <div class="disclaimer-box">
-        <strong>Disclaimer:</strong> AnimeFanTube is a fan-made site. We do not host any copyrighted files. All media is embedded from 3rd party providers.
+        <strong>Disclaimer:</strong> Content provided by third parties. StatCounter is active for quality monitoring.
     </div>
 </div>
 
@@ -128,45 +93,21 @@
     var step = 0;
     var mySmartLink = "https://www.profitablecpmratenetwork.com/jc4gx58sh?key=5514e279c1ee9115dc30d84909466443"; 
 
-    // Search Redirect
-    function doSearch(e) {
-        e.preventDefault();
-        let query = document.getElementById('searchInput').value;
-        if(query) {
-            window.open("https://www.youtube.com/@KyoPop_anime/search?query=" + encodeURIComponent(query), '_blank');
-        }
-        return false;
-    }
-
-    // Copy Link Fix
     function copyLink() {
-        var dummy = document.createElement('input');
-        document.body.appendChild(dummy);
-        dummy.value = window.location.href;
-        dummy.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummy);
-        alert("Link Copied! Share with your friends.");
+        navigator.clipboard.writeText(window.location.href);
+        alert("Link Copied!");
     }
 
-    // Dynamic View Count
-    setInterval(() => {
-        let count = Math.floor(Math.random() * (580 - 480) + 480);
-        document.getElementById('view-count').innerText = count;
-    }, 5000);
-
-    // Player Logic
     function play(id, el) {
         document.getElementById('main-player').src = "https://drive.google.com/file/d/" + id + "/preview";
         document.querySelectorAll('.btn-ep').forEach(b => b.classList.remove('active'));
         el.classList.add('active');
         currentFile = id;
         step = 0;
-        document.getElementById('dl-btn').innerText = "📥 DOWNLOAD FULL HD EPISODE";
+        document.getElementById('dl-btn').innerText = "📥 DOWNLOAD FULL HD";
         document.getElementById('dl-btn').style.background = "#ff4444";
     }
 
-    // Download Earning Logic
     function startDL() {
         if(step === 0) {
             window.open(mySmartLink, '_blank');
@@ -175,12 +116,18 @@
             document.getElementById('dl-btn').style.background = "#28a745";
         } else {
             window.open("https://drive.google.com/uc?export=download&id=" + currentFile, '_blank');
-            step = 0; // Reset for next time
         }
     }
 </script>
 
 <script src="https://pl29366142.profitablecpmratenetwork.com/bc/f6/73/bcf673639c5cb6227aafe45bd0cd2b0b.js"></script>
+
+<script type="text/javascript">
+var sc_project=13226623; 
+var sc_invisible=1; 
+var sc_security="c559e0b3"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
 
 </body>
 </html>
