@@ -10,8 +10,16 @@
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 500px; margin: auto; }
         .card { background: #111; border-radius: 12px; overflow: hidden; border: 1px solid #333; text-decoration: none; color: #fff; transition: 0.3s; display: block; }
         .card:hover { border-color: #1e90ff; transform: translateY(-5px); }
-        .card img { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; }
-        .card-name { padding: 10px; font-size: 13px; font-weight: bold; }
+        
+        /* Image Setting */
+        .card img { 
+            width: 100%; 
+            aspect-ratio: 2/3; 
+            object-fit: cover; 
+            display: block;
+            background: #222; /* Image load hone tak dark dikhega */
+        }
+        .card-name { padding: 10px; font-size: 13px; font-weight: bold; line-height: 1.4; }
     </style>
 </head>
 <body>
@@ -19,8 +27,8 @@
     
     <div class="grid">
         <a href="watch.html" class="card">
-            <img src="https://image.tmdb.org/t/p/w500/v5pTidB6vH8fQG0Xw7Y9O3e9v.jpg" alt="COTE">
-            <div class="card-name">Classroom of the Elite (Hindi)</div>
+            <img src="https://lh3.googleusercontent.com/d/1Dv-wDketjsUzBqVbV1YwccmJkKasQBs7" alt="Classroom of the Elite Season 4">
+            <div class="card-name">Classroom of the Elite<br><span style="color:#1e90ff;">Season 4 (Hindi)</span></div>
         </a>
         
         <div class="card" style="opacity: 0.5;">
