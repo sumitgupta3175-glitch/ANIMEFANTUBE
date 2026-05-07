@@ -3,56 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AnimeFanTube - Premium Player</title>
-    
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <title>AnimeFanTube - COTE S4 Hindi Dubbed</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        :root { --plyr-color-main: #1e90ff; }
-        * { box-sizing: border-box; transition: all 0.2s ease; }
-        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 10px; text-align: center; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 10px; text-align: center; overflow-x: hidden; }
+        .container { max-width: 550px; margin: auto; }
         
-        .container { max-width: 600px; margin: auto; }
-
         /* Header */
-        .header { display: flex; justify-content: space-between; align-items: center; padding: 10px 5px; margin-bottom: 5px; }
-        .logo { font-size: 20px; font-weight: 900; color: #1e90ff; text-decoration: none; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 10px 5px; border-bottom: 1px solid #1e90ff44; margin-bottom: 10px; }
+        .logo { font-size: 19px; font-weight: bold; color: #1e90ff; text-decoration: none; text-transform: uppercase; }
 
-        /* Banner Ad Slot (Stability Fix) */
-        .ad-container-top { height: 60px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; background: #111; border-radius: 8px; }
-
-        /* Professional Video Player Wrapper */
-        .video-wrapper { 
+        /* Fixed Video Player Layout */
+        .video-container { 
             position: relative; 
             width: 100%; 
             aspect-ratio: 16/9; 
-            background: #000; 
+            background: #080808; 
+            border: 2px solid #1e90ff; 
             border-radius: 12px; 
-            border: 1px solid #333;
             overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.3);
             margin-bottom: 15px;
+            z-index: 10;
         }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
         /* Episode Grid */
-        .ep-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 15px 0; }
-        .btn-ep { background: #1a1a1a; color: #fff; border: 1px solid #333; padding: 12px 5px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 11px; }
-        .btn-ep.active { background: #1e90ff; color: #000; border-color: #1e90ff; }
+        .ep-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 15px; padding: 0 5px; }
+        .btn-ep { background: #111; color: #fff; border: 1px solid #333; padding: 12px 2px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 11px; z-index: 20; position: relative; }
+        .btn-ep.active { background: #1e90ff; color: #000; border-color: #1e90ff; box-shadow: 0 0 10px #1e90ff; }
 
-        /* Social Buttons */
-        .btn-link { text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px; border-radius: 10px; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
+        /* Action Buttons */
+        .action-area { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; padding: 0 5px; }
+        .btn-main { text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px; border-radius: 10px; font-weight: bold; font-size: 14px; border: none; cursor: pointer; z-index: 20; position: relative; }
+        .dl { background: #28a745; color: #fff; font-size: 16px; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3); }
         .yt { background: #ff0000; color: #fff; }
         .tg { background: #229ED9; color: #fff; }
-        .dl { background: #28a745; color: #fff; border: none; width: 100%; cursor: pointer; font-size: 16px; }
 
-        /* Content Text */
-        .info-box { text-align: left; padding: 10px 5px; }
-        .title { font-size: 18px; font-weight: bold; margin: 0; }
-        .desc { font-size: 12px; color: #aaa; margin-top: 4px; }
+        /* Ad Slots */
+        .ad-space { min-height: 55px; display: flex; align-items: center; justify-content: center; margin: 10px 0; background: rgba(255,255,255,0.03); border-radius: 8px; }
     </style>
 </head>
 <body>
+
+<script type='text/javascript' src='//pl29366140.profitablecpmratenetwork.com/fa/e8/5e/fae85e8e8d72a5d79130383c322ef8be.js'></script>
 
 <div class="container">
     <header class="header">
@@ -60,26 +56,18 @@
         <a href="https://www.youtube.com/@KyoPop_anime" target="_blank" style="color:#ff0000; font-size: 22px;"><i class="fa-brands fa-youtube"></i></a>
     </header>
 
-    <div class="ad-container-top">
+    <div class="ad-space">
         <script type="text/javascript">
             atOptions = { 'key' : '9f083686346ab9e9da811d0306e36583', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
         </script>
         <script type="text/javascript" src="//www.highperformanceformat.com/9f083686346ab9e9da811d0306e36583/invoke.js"></script>
     </div>
 
-    <div class="video-wrapper">
-        <iframe 
-            id="main-player"
-            src="https://drive.google.com/file/d/15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne/preview" 
-            allow="autoplay" 
-            allowfullscreen>
-        </iframe>
+    <div class="video-container">
+        <iframe id="main-player" src="https://drive.google.com/file/d/15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne/preview" allow="autoplay" allowfullscreen></iframe>
     </div>
 
-    <div class="info-box">
-        <h1 id="ep-title" class="title">Classroom of the Elite S4 EP 04</h1>
-        <p class="desc">HD Quality • Unofficial Hindi Dubbed Recap</p>
-    </div>
+    <h2 id="ep-title" style="font-size: 18px; text-align: left; margin: 0 0 15px 5px;">Classroom of the Elite S4 EP 04</h2>
 
     <div class="ep-grid">
         <button class="btn-ep" onclick="play('1JGQZsEsnV3rCxol4scspTZkT7SS88n98', '01', this)">EP 01</button>
@@ -88,13 +76,13 @@
         <button class="btn-ep active" onclick="play('15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne', '04', this)">EP 04</button>
     </div>
 
-    <div class="action-section">
-        <button id="dl-btn" class="btn-link dl" onclick="startDL()">📥 DOWNLOAD FULL HD</button>
-        <a href="https://www.youtube.com/@KyoPop_anime" target="_blank" class="btn-link yt"><i class="fa-brands fa-youtube"></i> SUBSCRIBE ON YOUTUBE</a>
-        <a href="https://t.me/Aapka_Telegram_Link" target="_blank" class="btn-link tg"><i class="fa-brands fa-telegram"></i> JOIN TELEGRAM UPDATES</a>
+    <div class="action-area">
+        <button id="dl-btn" class="btn-main dl" onclick="startDL()">📥 DOWNLOAD FULL HD</button>
+        <a href="https://www.youtube.com/@KyoPop_anime" target="_blank" class="btn-main yt"><i class="fa-brands fa-youtube"></i> SUBSCRIBE YOUTUBE</a>
+        <a href="https://t.me/Aapka_Telegram_Link" target="_blank" class="btn-main tg"><i class="fa-brands fa-telegram"></i> JOIN TELEGRAM</a>
     </div>
 
-    <div style="margin-top: 20px; min-height: 250px;">
+    <div style="margin-top: 20px; min-height: 250px; background: rgba(255,255,255,0.03); border-radius: 10px; display:flex; align-items:center; justify-content:center;">
         <script type="text/javascript">
             atOptions = { 'key' : '10ed9aeface00126e5e4a704af783e8c', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
         </script>
@@ -108,17 +96,22 @@
     var mySmartLink = "https://www.profitablecpmratenetwork.com/jc4gx58sh?key=5514e279c1ee9115dc30d84909466443"; 
 
     function play(id, epNum, el) {
-        // Player hilaaye bina source change karein
-        document.getElementById('main-player').src = "https://drive.google.com/file/d/" + id + "/preview";
-        document.getElementById('ep-title').innerText = "Classroom of the Elite S4 EP " + epNum;
+        // Player Reset for smooth loading
+        var player = document.getElementById('main-player');
+        player.style.opacity = "0";
         
+        setTimeout(function(){
+            player.src = "https://drive.google.com/file/d/" + id + "/preview";
+            player.style.opacity = "1";
+        }, 200);
+
+        document.getElementById('ep-title').innerText = "Classroom of the Elite S4 EP " + epNum;
         document.querySelectorAll('.btn-ep').forEach(b => b.classList.remove('active'));
         el.classList.add('active');
         
         currentFile = id;
         step = 0;
         document.getElementById('dl-btn').innerText = "📥 DOWNLOAD FULL HD";
-        document.getElementById('dl-btn').style.background = "#28a745";
     }
 
     function startDL() {
@@ -126,15 +119,13 @@
             window.open(mySmartLink, '_blank');
             step++;
             document.getElementById('dl-btn').innerText = "✅ CLICK AGAIN TO DOWNLOAD";
-            document.getElementById('dl-btn').style.background = "#1e90ff";
         } else {
             window.open("https://drive.google.com/uc?export=download&id=" + currentFile, '_blank');
         }
     }
 </script>
 
-<script src="https://pl29366140.profitablecpmratenetwork.com/fa/e8/5e/fae85e8e8d72a5d79130383c322ef8be.js"></script>
-<script src="https://pl29366142.profitablecpmratenetwork.com/bc/f6/73/bcf673639c5cb6227aafe45bd0cd2b0b.js"></script>
+<script type='text/javascript' src='//pl29366142.profitablecpmratenetwork.com/bc/f6/73/bcf673639c5cb6227aafe45bd0cd2b0b.js'></script>
 
 <script type="text/javascript">
 var sc_project=13226623; var sc_invisible=1; var sc_security="c559e0b3"; 
