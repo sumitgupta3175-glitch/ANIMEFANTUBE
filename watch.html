@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Watch Anime - AnimeFanTube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 10px; text-align: center; }
+        .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border: 2px solid #1e90ff; border-radius: 12px; overflow: hidden; margin-bottom: 15px; position: relative; box-shadow: 0 0 15px rgba(30,144,255,0.3); }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .ep-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 15px 0; }
+        .btn-ep { background: #111; color: #fff; border: 1px solid #333; padding: 12px 5px; border-radius: 8px; font-weight: bold; font-size: 11px; cursor: pointer; }
+        .btn-ep.active { background: #1e90ff; color: #000; border-color: #1e90ff; }
+        .btn-action { background: #28a745; color: #fff; border: none; padding: 15px; width: 100%; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 16px; transition: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="video-box">
+        <iframe id="main-player" src="https://drive.google.com/file/d/15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne/preview" allow="autoplay" allowfullscreen></iframe>
+    </div>
+    
+    <div style="text-align: left; padding: 0 5px;"><h3 id="ep-title">Classroom of the Elite S4 EP 04</h3></div>
+
+    <div class="ep-grid">
+        <button class="btn-ep active" onclick="play('15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne', '04', this)">EP 04</button>
+        <button class="btn-ep" onclick="play('1JGQZsEsnV3rCxol4scspTZkT7SS88n98', '01', this)">EP 01</button>
+        <button class="btn-ep" onclick="play('19cNfNi9riQkpNi5vaJPHE0yg1dt6eeJi', '02', this)">EP 02</button>
+        <button class="btn-ep" onclick="play('1xXfYn7hp-t9c0UPfGZTQaCAnfty10FR1', '03', this)">EP 03</button>
+    </div>
+
+    <button id="dl-btn" class="btn-action" onclick="startDL()">📥 DOWNLOAD FULL HD</button>
+
+    <script>
+        var currentFile = "15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne";
+        var step = 0;
+        var mySmartLink = "https://www.profitablecpmratenetwork.com/jc4gx58sh?key=5514e279c1ee9115dc30d84909466443"; 
+
+        function play(id, num, el) {
+            document.getElementById('main-player').src = "https://drive.google.com/file/d/" + id + "/preview";
+            document.getElementById('ep-title').innerText = "Classroom of the Elite S4 EP " + num;
+            document.querySelectorAll('.btn-ep').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+            currentFile = id;
+            step = 0;
+            document.getElementById('dl-btn').innerText = "📥 DOWNLOAD FULL HD";
+            document.getElementById('dl-btn').style.background = "#28a745";
+        }
+
+        function startDL() {
+            if(step === 0) {
+                window.open(mySmartLink, '_blank');
+                step++;
+                document.getElementById('dl-btn').innerText = "✅ CLICK AGAIN TO VERIFY";
+                document.getElementById('dl-btn').style.background = "#007bff";
+            } else {
+                // Ye line user ko download timer page par bhejegi
+                window.location.href = "download.html?id=" + currentFile;
+            }
+        }
+    </script>
+</body>
+</html>
+
