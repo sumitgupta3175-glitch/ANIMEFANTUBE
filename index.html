@@ -10,7 +10,7 @@
         header h1 { margin: 0; color: #1e90ff; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; }
         .container { padding: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
         .anime-card { background: #111; border-radius: 12px; overflow: hidden; border: 1px solid #222; transition: 0.3s; text-decoration: none; color: #fff; display: block; cursor: pointer; }
-        .anime-card:hover { transform: translateY(-5px); border-color: #1e90ff; }
+        .anime-card:hover { transform: translateY(-5px); border-color: #1e90ff; box-shadow: 0 5px 15px rgba(30,144,255,0.3); }
         .poster-container { width: 100%; aspect-ratio: 2/3; overflow: hidden; background: #222; }
         .poster-container img { width: 100%; height: 100%; object-fit: cover; }
         .info { padding: 10px; text-align: center; }
@@ -19,15 +19,11 @@
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>AnimeFanTube</h1>
-    </header>
-
+    <header><h1>AnimeFanTube</h1></header>
     <div class="container">
         <div class="anime-card" onclick="window.open('https://omg10.com/4/10982181', '_blank'); window.location.href='classroom-of-the-elite-watch.html';">
             <div class="poster-container">
-                <img src="https://m.media-amazon.com/images/M/MV5BMjhiMzgxZTctNDc1Ni00OTIxLTgwMTUtZTAzMDQyMzExYzFkXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg" alt="COTE">
+                <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/vS7pA5XnS7kH13v0P4T4l5uL1Tz.jpg" alt="COTE Poster">
             </div>
             <div class="info">
                 <div class="meta">S1-S4 AVAILABLE</div>
@@ -35,6 +31,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
