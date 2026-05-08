@@ -37,21 +37,24 @@
     <div class="ad-slot"> </div>
 
     <script>
-        let timeLeft = 15;
-        const urlParams = new URLSearchParams(window.location.search);
-        const fileId = urlParams.get('id');
+        <script>
+    let timeLeft = 15;
+    const urlParams = new URLSearchParams(window.location.search);
+    const fileId = urlParams.get('id');
 
-        let downloadTimer = setInterval(() => {
-            timeLeft--;
-            document.getElementById('timer').innerText = timeLeft;
-            if(timeLeft <= 0) {
-                clearInterval(downloadTimer);
-                document.getElementById('timer').style.display = 'none';
-                let btn = document.getElementById('final-btn');
-                btn.style.display = 'inline-block';
-                btn.href = "https://drive.google.com/uc?export=download&id=" + fileId;
-            }
-        }, 1000);
-    </script>
+    let downloadTimer = setInterval(() => {
+        timeLeft--;
+        document.getElementById('timer').innerText = timeLeft;
+        if(timeLeft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById('timer').style.display = 'none';
+            let btn = document.getElementById('final-btn');
+            btn.style.display = 'inline-block';
+            // UPDATE: Bypass Gmail account selection popup
+            btn.href = "https://docs.google.com/uc?export=download&id=" + fileId;
+        }
+    }, 1000);
+</script>
+
 </body>
 </html>
