@@ -9,12 +9,16 @@
         header { background: #111; padding: 15px; border-bottom: 2px solid #1e90ff; }
         header h1 { margin: 0; color: #1e90ff; font-size: 20px; cursor: pointer; }
         .content { padding: 20px; }
-        .poster { width: 220px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #1e90ff; }
+        .poster { width: 220px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #1e90ff; box-shadow: 0 0 15px rgba(30,144,255,0.3); }
         .btn-container { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 20px; }
         .download-btn { 
             background: #1e90ff; color: white; text-decoration: none; padding: 15px 40px; 
             font-weight: bold; border-radius: 5px; width: 80%; max-width: 300px;
+            transition: 0.3s; display: inline-block;
         }
+        .download-btn:hover { background: #00bfff; transform: scale(1.05); }
+        .season-title { color: #1e90ff; font-weight: bold; margin-top: 10px; font-size: 14px; text-transform: uppercase; }
+        .ad-banner { margin: 15px auto; min-height: 50px; }
     </style>
 </head>
 <body>
@@ -23,14 +27,37 @@
         <h1 onclick="window.location.href='index.html'">← AnimeFanTube</h1>
     </header>
 
+    <div class="ad-banner">
+        <script type="text/javascript">
+            atOptions = { 'key' : '9f083686346ab9e9da811d0306e36583', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/9f083686346ab9e9da811d0306e36583/invoke.js"></script>
+    </div>
+
     <div class="content">
-        <img src="https://m.media-amazon.com/images/M/MV5BMjhiMzgxZTctNDc1Ni00OTIxLTgwMTUtZTAzMDQyMzExYzFkXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg" class="poster">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjhiMzgxZTctNDc1Ni00OTIxLTgwMTUtZTAzMDQyMzExYzFkXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg" class="poster" alt="COTE Poster">
+        
         <h2>Classroom of the Elite</h2>
 
         <div class="btn-container">
-            <a href="https://omg10.com/4/10982181" target="_blank" class="download-btn">WATCH ONLINE (HD)</a>
-            <a href="https://omg10.com/4/10982181" target="_blank" class="download-btn" style="background: #333;">DOWNLOAD NOW</a>
+            
+            <div class="season-title">SEASON 1</div>
+            <a href="https://drive.google.com/drive/folders/15XN_0xR9m7o8VwBvYw0XzP1xR8VwBvYw" target="_blank" class="download-btn">WATCH / DOWNLOAD</a>
+
+            <div class="season-title">SEASON 2</div>
+            <a href="https://drive.google.com/drive/folders/15XN_0xR9m7o8VwBvYw0XzP1xR8VwBvYw" target="_blank" class="download-btn">WATCH / DOWNLOAD</a>
+
+            <div class="season-title">SEASON 4 (NEW)</div>
+            <a href="https://drive.google.com/drive/folders/15XN_0xR9m7o8VwBvYw0XzP1xR8VwBvYw" target="_blank" class="download-btn" style="background: #e74c3c;">WATCH / DOWNLOAD</a>
+
         </div>
+    </div>
+
+    <div class="ad-banner" style="margin-top:30px;">
+        <script type="text/javascript">
+            atOptions = { 'key' : '9f083686346ab9e9da811d0306e36583', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/9f083686346ab9e9da811d0306e36583/invoke.js"></script>
     </div>
 
 </body>
