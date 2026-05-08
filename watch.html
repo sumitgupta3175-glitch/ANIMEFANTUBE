@@ -65,8 +65,6 @@
 
     <button id="dl-btn" class="btn-dl" onclick="startDL()">📥 DOWNLOAD EPISODE 1</button>
 
-    <div class="ad-slot" style="margin-top:20px;"></div>
-
     <script>
         var currentFile = "1mLI2Q7uNC23G1rilqnzmW2dz52pg_aVC";
         var step = 0;
@@ -93,15 +91,31 @@
                     <button class="btn-ep" onclick="play('1-BaYW3EQbqzEUS3WtSIk9GPvrdJKMhpT', '11', this)">EP 11</button>
                     <button class="btn-ep" onclick="play('11nurJGCkyRAt_FJutVi3y6J8VxTtgi5C', '12', this)">EP 12</button>
                 `;
+            } else if(sNum === 2) {
+                list.innerHTML = `
+                    <button class="btn-ep active" onclick="play('1Qj6JN7GSLuoYct4ovWPRxAo1269Bjr7F', '1', this)">EP 1</button>
+                    <button class="btn-ep" onclick="play('1wSX4GCGDv7J4uUay8LS8q7xyjXSD1HQ0', '2', this)">EP 2</button>
+                    <button class="btn-ep" onclick="play('1DwjAKhLfQfT-1RqRJIXUIljfpipygCao', '3', this)">EP 3</button>
+                    <button class="btn-ep" onclick="play('1ltx8ZBaTpyikGIGdRB2gsdjqxpAnyMeK', '4', this)">EP 4</button>
+                    <button class="btn-ep" onclick="play('1LsWRx6yfsT43pcfRdB213fGLbQfjeP6l', '5', this)">EP 5</button>
+                    <button class="btn-ep" onclick="play('1PbhPDRCFtf30P6Zd0IrmOEqO4JQ_OQdI', '6', this)">EP 6</button>
+                    <button class="btn-ep" onclick="play('1ibaRZ1drKDW-DaPsPPslz1r1mWEdymc4', '7', this)">EP 7</button>
+                    <button class="btn-ep" onclick="play('1ibaRZ1drKDW-DaPsPPslz1r1mWEdymc4', '8', this)">EP 8</button>
+                    <button class="btn-ep" onclick="play('1CF9QBKPE9KLVFLkiTBv_evwvjzfek7pd', '9', this)">EP 9</button>
+                    <button class="btn-ep" onclick="play('1soaLkGvoyMo4YNEBoqlujGx-21PnFc9A', '10', this)">EP 10</button>
+                    <button class="btn-ep" onclick="play('10F2QXfOWNK2tnZiZOgExUe3MfXbb_L7S', '11', this)">EP 11</button>
+                    <button class="btn-ep" onclick="play('1HQcD7kYNFh8pzs3LmBEOpykIdaD8VCgX', '12', this)">EP 12</button>
+                    <button class="btn-ep" onclick="play('1fm-zIXOHYzZJN-AwqKPI3UvTDLrNW7Sj', '13', this)">EP 13</button>
+                `;
             } else if(sNum === 4) {
                 list.innerHTML = `
-                    <button class="btn-ep" onclick="play('1JGQZsEsnV3rCxol4scspTZkT7SS88n98', '1', this)">EP 1</button>
+                    <button class="btn-ep active" onclick="play('1JGQZsEsnV3rCxol4scspTZkT7SS88n98', '1', this)">EP 1</button>
                     <button class="btn-ep" onclick="play('19cNfNi9riQkpNi5vaJPHE0yg1dt6eeJi', '2', this)">EP 2</button>
                     <button class="btn-ep" onclick="play('1xXfYn7hp-t9c0UPfGZTQaCAnfty10FR1', '3', this)">EP 3</button>
-                    <button class="btn-ep active" onclick="play('15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne', '4', this)">EP 4</button>
+                    <button class="btn-ep" onclick="play('15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne', '4', this)">EP 4</button>
                 `;
             } else {
-                list.innerHTML = `<div style="padding:15px; color:#555; font-size:13px;">Coming Soon...</div>`;
+                list.innerHTML = `<div style="padding:15px; color:#555; font-size:13px;">Season ${sNum} Coming Soon...</div>`;
             }
         }
 
