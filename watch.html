@@ -6,30 +6,16 @@
     <title>Watch Anime - AnimeFanTube</title>
     <style>
         body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 10px; text-align: center; }
-        
-        /* 1. Ads Styling */
         .ad-slot { min-height: 50px; margin: 10px auto; background: #0a0a0a; display: flex; justify-content: center; align-items: center; border-radius: 8px; overflow: hidden; }
-
-        /* 2. Video Player Fixed */
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border: 2px solid #1e90ff; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 0 15px rgba(30,144,255,0.3); }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
-        /* 3. Section Titles */
         .label { text-align: left; font-size: 13px; font-weight: bold; color: #1e90ff; margin: 15px 5px 5px; text-transform: uppercase; }
-
-        /* 4. Horizontal Scroll Fix (For Seasons & EP) */
         .scroll-row { display: flex; overflow-x: auto; white-space: nowrap; padding: 10px 5px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
         .scroll-row::-webkit-scrollbar { display: none; }
-
-        /* Season Buttons */
-        .btn-s { background: #1a1a1a; color: #aaa; border: 1px solid #333; padding: 8px 22px; border-radius: 20px; margin-right: 8px; cursor: pointer; font-size: 12px; flex: 0 0 auto; transition: 0.3s; }
+        .btn-s { background: #1a1a1a; color: #aaa; border: 1px solid #333; padding: 8px 22px; border-radius: 20px; margin-right: 8px; cursor: pointer; font-size: 12px; flex: 0 0 auto; }
         .btn-s.active { background: #fff; color: #000; border-color: #fff; font-weight: bold; }
-
-        /* Episode Buttons (EP 1, 2, 3 Style) */
         .btn-ep { background: #111; color: #fff; border: 1px solid #333; padding: 12px 28px; border-radius: 10px; font-weight: bold; margin-right: 10px; cursor: pointer; flex: 0 0 auto; transition: 0.3s; }
         .btn-ep.active { background: #1e90ff; color: #fff; border-color: #1e90ff; box-shadow: 0 0 10px rgba(30,144,255,0.4); }
-
-        /* 5. Download Button */
         .btn-dl { background: linear-gradient(to right, #28a745, #1e7e34); color: #fff; border: none; padding: 16px; width: 100%; border-radius: 12px; font-weight: bold; font-size: 16px; margin-top: 20px; cursor: pointer; }
     </style>
 </head>
@@ -43,7 +29,7 @@
     </div>
 
     <div class="video-box">
-        <iframe id="main-player" src="https://drive.google.com/file/d/15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne/preview" allowfullscreen></iframe>
+        <iframe id="main-player" src="https://drive.google.com/file/d/1mLI2Q7uNC23G1rilqnzmW2dz52pg_aVC/preview" allowfullscreen></iframe>
     </div>
 
     <div class="ad-slot" style="min-height: 250px;">
@@ -55,29 +41,34 @@
 
     <div class="label">Select Season</div>
     <div class="scroll-row">
-        <button class="btn-s" onclick="changeSeason(1, this)">S1</button>
+        <button class="btn-s active" onclick="changeSeason(1, this)">S1</button>
         <button class="btn-s" onclick="changeSeason(2, this)">S2</button>
         <button class="btn-s" onclick="changeSeason(3, this)">S3</button>
-        <button class="btn-s active" onclick="changeSeason(4, this)">S4</button>
+        <button class="btn-s" onclick="changeSeason(4, this)">S4</button>
     </div>
 
-    <div class="label" id="ep-label">Episodes (Season 4)</div>
+    <div class="label" id="ep-label">Episodes (Season 1)</div>
     <div class="scroll-row" id="ep-list">
-        <button class="btn-ep" onclick="play('1JGQZsEsnV3rCxol4scspTZkT7SS88n98', '1', this)">EP 1</button>
-        <button class="btn-ep" onclick="play('19cNfNi9riQkpNi5vaJPHE0yg1dt6eeJi', '2', this)">EP 2</button>
-        <button class="btn-ep" onclick="play('1xXfYn7hp-t9c0UPfGZTQaCAnfty10FR1', '3', this)">EP 3</button>
-        <button class="btn-ep active" onclick="play('15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne', '4', this)">EP 4</button>
+        <button class="btn-ep active" onclick="play('1mLI2Q7uNC23G1rilqnzmW2dz52pg_aVC', '1', this)">EP 1</button>
+        <button class="btn-ep" onclick="play('1Iu2jSuKeh8lr4ycHR3RjtNmprYY1iR7y', '2', this)">EP 2</button>
+        <button class="btn-ep" onclick="play('1Ou_et2AxJzVw1fstL1nMC65Fg4SCCyfm', '3', this)">EP 3</button>
+        <button class="btn-ep" onclick="play('1l8dencMDEKZNdhibV7LW5EbI_XPevYQN', '4', this)">EP 4</button>
+        <button class="btn-ep" onclick="play('1HLdSusLSRE1w9w_Nr83J_Wy1UbTm-GZC', '5', this)">EP 5</button>
+        <button class="btn-ep" onclick="play('1TOWhCDdoPVM7dfFAj0A3mvU59F2TPUtm', '6', this)">EP 6</button>
+        <button class="btn-ep" onclick="play('1nklAu7VLVNOfjdTzM98hTDpAy5QpZ-Ql', '7', this)">EP 7</button>
+        <button class="btn-ep" onclick="play('1lRlzPbF-Mqx3-_lYdZD04z7yE2AFXB8V', '8', this)">EP 8</button>
+        <button class="btn-ep" onclick="play('1tXne5olJsLqONQUP24otk4rZrR8T5J0i', '9', this)">EP 9</button>
+        <button class="btn-ep" onclick="play('1EN6TSfugSv6-heJJ0nyqUJiNRbd7dqwl', '10', this)">EP 10</button>
+        <button class="btn-ep" onclick="play('1-BaYW3EQbqzEUS3WtSIk9GPvrdJKMhpT', '11', this)">EP 11</button>
+        <button class="btn-ep" onclick="play('11nurJGCkyRAt_FJutVi3y6J8VxTtgi5C', '12', this)">EP 12</button>
     </div>
 
-    <div class="ad-slot"></div>
-
-    <button id="dl-btn" class="btn-dl" onclick="startDL()">📥 DOWNLOAD EPISODE</button>
+    <button id="dl-btn" class="btn-dl" onclick="startDL()">📥 DOWNLOAD EPISODE 1</button>
 
     <div class="ad-slot" style="margin-top:20px;"></div>
-    <div class="ad-slot"></div>
 
     <script>
-        var currentFile = "15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne";
+        var currentFile = "1mLI2Q7uNC23G1rilqnzmW2dz52pg_aVC";
         var step = 0;
         var mySmartLink = "https://www.profitablecpmratenetwork.com/jc4gx58sh?key=5514e279c1ee9115dc30d84909466443"; 
 
@@ -87,7 +78,22 @@
             let list = document.getElementById('ep-list');
             document.getElementById('ep-label').innerText = "Episodes (Season " + sNum + ")";
 
-            if(sNum === 4) {
+            if(sNum === 1) {
+                list.innerHTML = `
+                    <button class="btn-ep active" onclick="play('1mLI2Q7uNC23G1rilqnzmW2dz52pg_aVC', '1', this)">EP 1</button>
+                    <button class="btn-ep" onclick="play('1Iu2jSuKeh8lr4ycHR3RjtNmprYY1iR7y', '2', this)">EP 2</button>
+                    <button class="btn-ep" onclick="play('1Ou_et2AxJzVw1fstL1nMC65Fg4SCCyfm', '3', this)">EP 3</button>
+                    <button class="btn-ep" onclick="play('1l8dencMDEKZNdhibV7LW5EbI_XPevYQN', '4', this)">EP 4</button>
+                    <button class="btn-ep" onclick="play('1HLdSusLSRE1w9w_Nr83J_Wy1UbTm-GZC', '5', this)">EP 5</button>
+                    <button class="btn-ep" onclick="play('1TOWhCDdoPVM7dfFAj0A3mvU59F2TPUtm', '6', this)">EP 6</button>
+                    <button class="btn-ep" onclick="play('1nklAu7VLVNOfjdTzM98hTDpAy5QpZ-Ql', '7', this)">EP 7</button>
+                    <button class="btn-ep" onclick="play('1lRlzPbF-Mqx3-_lYdZD04z7yE2AFXB8V', '8', this)">EP 8</button>
+                    <button class="btn-ep" onclick="play('1tXne5olJsLqONQUP24otk4rZrR8T5J0i', '9', this)">EP 9</button>
+                    <button class="btn-ep" onclick="play('1EN6TSfugSv6-heJJ0nyqUJiNRbd7dqwl', '10', this)">EP 10</button>
+                    <button class="btn-ep" onclick="play('1-BaYW3EQbqzEUS3WtSIk9GPvrdJKMhpT', '11', this)">EP 11</button>
+                    <button class="btn-ep" onclick="play('11nurJGCkyRAt_FJutVi3y6J8VxTtgi5C', '12', this)">EP 12</button>
+                `;
+            } else if(sNum === 4) {
                 list.innerHTML = `
                     <button class="btn-ep" onclick="play('1JGQZsEsnV3rCxol4scspTZkT7SS88n98', '1', this)">EP 1</button>
                     <button class="btn-ep" onclick="play('19cNfNi9riQkpNi5vaJPHE0yg1dt6eeJi', '2', this)">EP 2</button>
@@ -95,14 +101,14 @@
                     <button class="btn-ep active" onclick="play('15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne', '4', this)">EP 4</button>
                 `;
             } else {
-                list.innerHTML = `<div style="padding:15px; color:#555; font-style:italic; font-size:13px;">Season ${sNum} episodes are coming soon...</div>`;
+                list.innerHTML = `<div style="padding:15px; color:#555; font-size:13px;">Coming Soon...</div>`;
             }
         }
 
         function play(id, num, el) {
             document.getElementById('main-player').src = "https://drive.google.com/file/d/" + id + "/preview";
             document.querySelectorAll('.btn-ep').forEach(b => b.classList.remove('active'));
-            el.classList.add('active');
+            if(el) el.classList.add('active');
             currentFile = id;
             step = 0;
             document.getElementById('dl-btn').innerText = "📥 DOWNLOAD EPISODE " + num;
@@ -113,7 +119,6 @@
                 window.open(mySmartLink, '_blank');
                 step++;
                 document.getElementById('dl-btn').innerText = "✅ CLICK AGAIN TO VERIFY";
-                document.getElementById('dl-btn').style.background = "#007bff";
             } else {
                 window.location.href = "download.html?id=" + currentFile;
             }
