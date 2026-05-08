@@ -11,14 +11,17 @@
         body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
         header { background: #111; padding: 15px; text-align: center; border-bottom: 2px solid #1e90ff; }
         header h1 { margin: 0; color: #1e90ff; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; }
-        .container { padding: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
-        .anime-card { background: #111; border-radius: 12px; overflow: hidden; border: 1px solid #222; transition: 0.3s; text-decoration: none; color: #fff; }
+        .container { padding: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
+        .anime-card { background: #111; border-radius: 12px; overflow: hidden; border: 1px solid #222; transition: 0.3s; text-decoration: none; color: #fff; display: block; }
         .anime-card:hover { transform: translateY(-5px); border-color: #1e90ff; box-shadow: 0 5px 15px rgba(30,144,255,0.3); }
-        .anime-card img { width: 100%; aspect-ratio: 2/3; object-fit: cover; }
-        .anime-card .info { padding: 10px; text-align: center; }
-        .anime-card h3 { margin: 5px 0; font-size: 14px; }
-        .anime-card .meta { font-size: 11px; color: #1e90ff; font-weight: bold; }
-        .ad-slot { margin: 15px auto; text-align: center; min-height: 50px; background: #0a0a0a; }
+        
+        /* Image fix for responsive look */
+        .poster-container { width: 100%; aspect-ratio: 2/3; overflow: hidden; background: #222; }
+        .poster-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        
+        .info { padding: 10px; text-align: center; }
+        .info h3 { margin: 5px 0; font-size: 13px; line-height: 1.2; }
+        .meta { font-size: 10px; color: #1e90ff; font-weight: bold; margin-bottom: 4px; }
     </style>
 </head>
 <body>
@@ -27,27 +30,24 @@
         <h1>AnimeFanTube</h1>
     </header>
 
-    <div class="ad-slot">
-        <script type="text/javascript">
-            atOptions = { 'key' : '9f083686346ab9e9da811d0306e36583', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/9f083686346ab9e9da811d0306e36583/invoke.js"></script>
-    </div>
-
     <div class="container">
         <a href="classroom-of-the-elite-watch.html" class="anime-card">
-            <img src="https://m.media-amazon.com/images/M/MV5BMjhiMzgxZTctNDc1Ni00OTIxLTgwMTUtZTAzMDQyMzExYzFkXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg" alt="Classroom of the Elite">
+            <div class="poster-container">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjhiMzgxZTctNDc1Ni00OTIxLTgwMTUtZTAzMDQyMzExYzFkXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg" alt="COTE">
+            </div>
             <div class="info">
                 <div class="meta">S1-S4 AVAILABLE</div>
                 <h3>Classroom of the Elite</h3>
             </div>
         </a>
 
-        <div class="anime-card" style="opacity: 0.5;">
-            <img src="https://via.placeholder.com/150x225?text=New+Series" alt="Soon">
+        <div class="anime-card" style="opacity: 0.6;">
+            <div class="poster-container">
+                <img src="https://via.placeholder.com/150x225/111/444?text=SOON" alt="Soon">
+            </div>
             <div class="info">
                 <div class="meta">COMING SOON</div>
-                <h3>Stay Tuned...</h3>
+                <h3>More Series Added Daily</h3>
             </div>
         </div>
     </div>
