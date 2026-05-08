@@ -8,53 +8,56 @@
         body { background: #000; color: #fff; text-align: center; font-family: sans-serif; padding: 10px; }
         .ad-slot { min-height: 100px; margin: 15px 0; background: #080808; border-radius: 8px; }
         .timer-box { background: #111; padding: 20px; border-radius: 15px; border: 1px solid #1e90ff; margin: 20px auto; max-width: 400px; }
-        #timer { font-size: 40px; color: #1e90ff; font-weight: bold; }
-        .btn-dl { background: #28a745; color: #fff; padding: 15px 30px; border-radius: 10px; text-decoration: none; display: none; font-weight: bold; }
+        #timer-display { font-size: 50px; color: #1e90ff; font-weight: bold; margin: 10px 0; }
+        .btn-dl { background: #28a745; color: #fff; padding: 15px 30px; border-radius: 10px; text-decoration: none; display: none; font-weight: bold; font-size: 18px; box-shadow: 0 0 15px rgba(40,167,69,0.4); }
     </style>
 </head>
 <body>
 
-    <div class="ad-slot"> <script type="text/javascript">
+    <div class="ad-slot">
+        <script type="text/javascript">
             atOptions = { 'key' : '9f083686346ab9e9da811d0306e36583', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
         </script>
         <script type="text/javascript" src="//www.highperformanceformat.com/9f083686346ab9e9da811d0306e36583/invoke.js"></script>
     </div>
 
     <div class="timer-box">
-        <h3>Generating Link...</h3>
-        <div id="timer">15</div>
-        <a href="#" id="final-btn" class="btn-dl">📥 CLICK TO DOWNLOAD</a>
+        <h3 id="status-text">Likhne Wala Hai...</h3>
+        <div id="timer-display">15</div>
+        <a href="#" id="final-btn" class="btn-dl">📥 CLICK TO DOWNLOAD NOW</a>
     </div>
 
-    <div class="ad-slot"> <script type="text/javascript">
+    <div class="ad-slot">
+        <script type="text/javascript">
             atOptions = { 'key' : '10ed9aeface00126e5e4a704af783e8c', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
         </script>
         <script type="text/javascript" src="//www.highperformanceformat.com/10ed9aeface00126e5e4a704af783e8c/invoke.js"></script>
     </div>
 
-    <div class="ad-slot"> </div>
-
-    <div class="ad-slot"> </div>
-
     <script>
-        <script>
-    let timeLeft = 15;
-    const urlParams = new URLSearchParams(window.location.search);
-    const fileId = urlParams.get('id');
+        // Timer Logic
+        let count = 15;
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileId = urlParams.get('id');
 
-    let downloadTimer = setInterval(() => {
-        timeLeft--;
-        document.getElementById('timer').innerText = timeLeft;
-        if(timeLeft <= 0) {
-            clearInterval(downloadTimer);
-            document.getElementById('timer').style.display = 'none';
-            let btn = document.getElementById('final-btn');
-            btn.style.display = 'inline-block';
-            // UPDATE: Bypass Gmail account selection popup
-            btn.href = "https://docs.google.com/uc?export=download&id=" + fileId;
-        }
-    }, 1000);
-</script>
+        const timerDisplay = document.getElementById('timer-display');
+        const finalBtn = document.getElementById('final-btn');
+        const statusText = document.getElementById('status-text');
 
+        const downloadTimer = setInterval(() => {
+            count--;
+            timerDisplay.innerText = count;
+
+            if (count <= 0) {
+                clearInterval(downloadTimer);
+                timerDisplay.style.display = 'none';
+                statusText.innerText = "Link Ready!";
+                finalBtn.style.display = 'inline-block';
+                
+                // Gmail Popup Bypass Link
+                finalBtn.href = "https://docs.google.com/uc?export=download&id=" + fileId;
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
