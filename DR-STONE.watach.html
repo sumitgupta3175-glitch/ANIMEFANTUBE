@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Watch Dr. STONE - AnimeFanTube Blue Edition</title>
+    <style>
+        /* Neon Blue Theme */
+        body { 
+            background: #000814; 
+            color: #fff; 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            text-align: center; 
+        }
+        
+        .header-info { 
+            padding: 20px; 
+            background: #001d3d; 
+            border-bottom: 2px solid #00d2ff; 
+            box-shadow: 0 0 15px #00d2ff; 
+            margin-bottom: 20px; 
+        }
+        .header-info h1 { 
+            color: #00d2ff; 
+            margin: 0; 
+            text-shadow: 0 0 10px #00d2ff; 
+            font-size: 24px; 
+            letter-spacing: 2px;
+        }
+
+        /* Image Section */
+        .poster-container { padding: 10px; }
+        .poster-container img { 
+            width: 90%; 
+            max-width: 300px; 
+            border-radius: 15px; 
+            border: 2px solid #00d2ff; 
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.6); 
+        }
+
+        /* Info Section */
+        .anime-details { 
+            padding: 15px; 
+            text-align: left; 
+            max-width: 800px; 
+            margin: auto; 
+            line-height: 1.6;
+            background: rgba(0, 53, 102, 0.3);
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .anime-details h2 { 
+            color: #00d2ff; 
+            text-shadow: 0 0 5px #00d2ff; 
+            font-size: 22px; 
+            margin-bottom: 5px;
+        }
+        .anime-details p { color: #ade8f4; font-size: 14px; }
+
+        /* Video Box */
+        .video-box { 
+            width: 95%; 
+            max-width: 800px; 
+            aspect-ratio: 16/9; 
+            background: #000; 
+            border: 2px solid #00d2ff; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            position: relative; 
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.5); 
+            margin: 25px auto;
+        }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+        .label { 
+            text-align: left; 
+            font-size: 14px; 
+            font-weight: bold; 
+            color: #00d2ff; 
+            margin: 20px 5% 10px; 
+            text-transform: uppercase; 
+            border-left: 3px solid #00d2ff; 
+            padding-left: 8px;
+            text-shadow: 0 0 5px #00d2ff;
+        }
+        
+        .season-row { 
+            display: flex; 
+            overflow-x: auto; 
+            white-space: nowrap; 
+            padding: 10px 5%; 
+            gap: 12px; 
+            scrollbar-width: none; 
+        }
+        .btn-s { 
+            background: #001d3d; 
+            color: #00d2ff; 
+            border: 1px solid #00d2ff; 
+            padding: 10px 25px; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            font-weight: bold;
+        }
+        .btn-s.active { 
+            background: #00d2ff; 
+            color: #000; 
+            box-shadow: 0 0 15px #00d2ff; 
+        }
+
+        .ep-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)); 
+            gap: 12px; 
+            padding: 5%; 
+        }
+        .btn-ep { 
+            background: #000814; 
+            color: #00d2ff; 
+            border: 1px solid #00d2ff; 
+            padding: 12px 5px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: 0.3s; 
+        }
+        .btn-ep.active { 
+            background: #00d2ff; 
+            color: #000; 
+            box-shadow: 0 0 15px #00d2ff; 
+        }
+        
+        .btn-dl { 
+            background: linear-gradient(45deg, #0077b6, #00d2ff); 
+            color: #fff; 
+            border: none; 
+            padding: 18px; 
+            width: 90%; 
+            max-width: 800px; 
+            border-radius: 15px; 
+            font-weight: bold; 
+            font-size: 16px; 
+            margin: 30px auto; 
+            cursor: pointer; 
+            display: block;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-info">
+        <h1>ANIME FANTUBE</h1>
+    </div>
+
+    <div class="poster-container">
+        <img src="https://drive.google.com/thumbnail?id=1lHwUC54qEv2FANAnBjQA4q8hIkoA_qON&sz=w1000" alt="Dr. STONE Poster">
+    </div>
+
+    <div class="anime-details">
+        <h2>DR. STONE</h2>
+        <p><strong>Genre:</strong> Sci-Fi, Adventure, Shounen</p>
+        <p><strong>Plot:</strong> Science genius Senku Ishigami awakens thousands of years after a mysterious phenomenon turns humanity to stone. In a world of statues, he decides to rebuild civilization from scratch using the power of science!</p>
+    </div>
+
+    <div class="label">Now Playing</div>
+    <div class="video-box">
+        <iframe id="main-player" src="" allowfullscreen></iframe>
+    </div>
+
+    <div class="label">Seasons</div>
+    <div class="season-row">
+        <button class="btn-s active" onclick="changeSeason(1, this)">Season 1</button>
+        <button class="btn-s" onclick="changeSeason(2, this)">Season 2</button>
+        <button class="btn-s" onclick="changeSeason(3, this)">Season 3</button>
+    </div>
+
+    <div class="label" id="ep-label">Episodes (Season 1)</div>
+    <div class="ep-grid" id="ep-list"></div>
+
+    <button id="dl-btn" class="btn-dl" onclick="startDL()">📥 Download Episode 1</button>
+
+    <script>
+        var currentFile = "";
+        var step = 0;
+        var mySmartLink = "YOUR_ADS_LINK"; 
+
+        // Dr. Stone Season 1 Episode IDs
+        const s1_ids = [
+            "1UwCubKviH8Y1aowsDk1t_Nhma9mRFXJY", "1Vli1TjgNTEr1a9H8xBvrQHG9BUCUtG1O", "1gUB1tGS2FpGrw3ZDYfK2NiveZlV3kEDR", 
+            "1RzHsmVITbneXvILVLuL9-yuY-UZuUoFf", "1PSnFfff2KWQX9lOFBANshTBgrr4DAjEo", "1ajCDufWmWhRnLASvJGpr9z1s0cSLc2Lg", 
+            "15Bz4x-5cm6NoSds--oMr7_ck7p_Un7Mp", "1z6rKotlPAAFBVG5vABX6zkuXQoD7BfcG", "1s6jl8jZtR3OTAH1fvi50Og3hKQ--XqeQ", 
+            "1iSoiHmRA6bGGg_OdFBG0qwOz7ykW46eG", "13jdq5F0dFfKE0NvxxWxYjszxH_RPNxPs", "1cIybJxbdJ4UZ2THOMOOaeCBMkcB46lkN", 
+            "1Vzyighq_v6e8cuPsFQtubqQ8H9RS8Zpj", "1Pz7bDmJ-989a2gRjI9ua1wXX6eXManUy", "1mSqN_8S2UXTCGaUkF7Z3kqvM4drZ49yg", 
+            "1sCi2r9euo9F2QbxvlIPpwcZ_xdGZcE8Z", "1Uqmn65pCeaZydJPsEPGYiMsOqpG_-p3d", "1d5d8XbrFwNi-nJPRtNr1HVi8qtEpTSZf", 
+            "1qLY5DPqxTeWOMAaL3u6KY-83fkBPpbyr", "1Gvk-RQAUb-HWoHIu6JtakZKey28XQeAm", "1Yfm_pBxpYb3-EZTAi8BCcSEt39qMlHt2", 
+            "1AEdb-4O-MTClGDa-So3cx1B07EGEiW9V", "1WGslUVYHg9M-csqQ7GKgxV8mICkZssoC", "1Ii7Y_HnP_dKhtc067GyKF6pjRdIdzKG-"
+        ];
+
+        function changeSeason(sNum, btn) {
+            document.querySelectorAll('.btn-s').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            let list = document.getElementById('ep-list');
+            document.getElementById('ep-label').innerText = "Episodes (Season " + sNum + ")";
+            list.innerHTML = ""; 
+            
+            if(sNum === 1) {
+                s1_ids.forEach((id, index) => {
+                    let epNum = index + 1;
+                    list.innerHTML += `<button class="btn-ep ${index===0?'active':''}" onclick="play('${id}', '${epNum}', this)">EP ${epNum}</button>`;
+                });
+                play(s1_ids[0], '1');
+            } else {
+                list.innerHTML = "<p style='color:#0077b6; grid-column: 1/-1;'>Season " + sNum + " episodes will be added soon!</p>";
+            }
+        }
+
+        function play(id, num, el) {
+            document.getElementById('main-player').src = "https://drive.google.com/file/d/" + id + "/preview";
+            document.querySelectorAll('.btn-ep').forEach(b => b.classList.remove('active'));
+            if(el) el.classList.add('active');
+            currentFile = id;
+            step = 0;
+            document.getElementById('dl-btn').innerText = "📥 Download Episode " + num;
+        }
+
+        function startDL() {
+            if(step === 0) {
+                window.open(mySmartLink, '_blank');
+                step++;
+                document.getElementById('dl-btn').innerText = "✅ Click Again to Verify";
+            } else {
+                window.location.href = "download.html?id=" + currentFile;
+            }
+        }
+
+        window.onload = function() {
+            changeSeason(1, document.querySelector('.btn-s'));
+        };
+    </script>
+</body>
+</html>
+
