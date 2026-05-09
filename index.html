@@ -3,24 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="monetag" content="7aed9f963013c412f960feca63d09954">
-
     <title>AnimeFanTube - Home</title>
     <style>
+        /* Dark Theme Design */
         body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
-        header { background: #111; padding: 15px; text-align: center; border-bottom: 2px solid #1e90ff; }
-        header h1 { margin: 0; color: #1e90ff; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; }
-        .container { padding: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
-        .anime-card { background: #111; border-radius: 12px; overflow: hidden; border: 1px solid #222; transition: 0.3s; text-decoration: none; color: #fff; display: block; }
-        .anime-card:hover { transform: translateY(-5px); border-color: #1e90ff; box-shadow: 0 5px 15px rgba(30,144,255,0.3); }
         
-        .poster-container { width: 100%; aspect-ratio: 2/3; overflow: hidden; background: #222; }
-        .poster-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        header { background: #111; padding: 15px; text-align: center; border-bottom: 2px solid #ff69b4; }
+        header h1 { margin: 0; color: #ff69b4; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; }
         
-        .info { padding: 10px; text-align: center; }
-        .info h3 { margin: 5px 0; font-size: 13px; line-height: 1.2; }
-        .meta { font-size: 10px; color: #1e90ff; font-weight: bold; margin-bottom: 4px; }
+        .container { 
+            padding: 20px; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+            gap: 15px; 
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        /* Anime Card Design */
+        .anime-card { 
+            background: #111; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            border: 1px solid #333; 
+            transition: 0.3s ease; 
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        
+        .anime-card:hover { 
+            border-color: #ff69b4; 
+            transform: translateY(-5px); 
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+        }
+        
+        .anime-card img { 
+            width: 100%; 
+            aspect-ratio: 2/3; 
+            object-fit: cover; 
+            display: block;
+            background: #222; /* Image load hone tak dark background dikhega */
+        }
+        
+        .anime-info { padding: 12px 8px; text-align: center; }
+        .anime-info h3 { margin: 5px 0; font-size: 14px; color: #fff; line-height: 1.2; height: 34px; overflow: hidden; }
+        .anime-info p { margin: 5px 0 0; font-size: 11px; color: #ff69b4; font-weight: bold; text-transform: uppercase; }
+
+        footer { text-align: center; padding: 30px; color: #444; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -30,26 +62,21 @@
     </header>
 
     <div class="container">
+        
         <a href="classroom-of-the-elite-watch.html" class="anime-card">
-            <div class="poster-container">
-                <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/vS7pA5XnS7kH13v0P4T4l5uL1Tz.jpg" alt="COTE">
-            </div>
-            <div class="info">
-                <div class="meta">S1-S4 AVAILABLE</div>
+            <img src="https://lh3.googleusercontent.com/d/YOUR_ID" alt="Classroom of the Elite">
+            
+            <div class="anime-info">
                 <h3>Classroom of the Elite</h3>
+                <p>Season 1-3 | Hindi Sub</p>
             </div>
         </a>
 
-        <div class="anime-card" style="opacity: 0.6;">
-            <div class="poster-container">
-                <img src="https://via.placeholder.com/150x225/111/444?text=SOON" alt="Soon">
-            </div>
-            <div class="info">
-                <div class="meta">COMING SOON</div>
-                <h3>More Series Added Daily</h3>
-            </div>
         </div>
-    </div>
+
+    <footer>
+        © 2026 AnimeFanTube | Created with Passion
+    </footer>
 
 </body>
 </html>
