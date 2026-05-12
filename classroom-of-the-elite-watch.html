@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classroom of the Elite - Watch Online</title>
     <style>
-        body { background: #0f0f0f; color: white; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 20px; text-align: center; }
-        .player-container { max-width: 900px; margin: auto; background: #000; border: 2px solid #333; border-radius: 10px; overflow: hidden; box-shadow: 0 0 20px rgba(229, 9, 20, 0.4); }
-        iframe { width: 100%; aspect-ratio: 16/9; border: none; background: #000; }
-        .ep-box { max-width: 900px; margin: 20px auto; padding: 15px; background: #1a1a1a; border-radius: 10px; text-align: left; }
-        h2 { color: #e50914; margin-bottom: 10px; }
-        h3 { color: #888; border-bottom: 1px solid #333; padding-bottom: 5px; margin-top: 20px; font-size: 16px; text-transform: uppercase; }
-        .btn-ep { background: #333; color: white; border: none; padding: 10px 18px; margin: 5px; cursor: pointer; border-radius: 5px; transition: 0.3s; font-size: 14px; min-width: 60px; }
-        .btn-ep:hover { background: #e50914; transform: translateY(-2px); }
-        .btn-ep.active { background: #e50914; font-weight: bold; box-shadow: 0 0 10px rgba(229, 9, 20, 0.6); }
-        .dl-section { margin-top: 30px; border-top: 1px solid #333; padding-top: 20px; }
-        #dl-btn { background: #28a745; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; cursor: pointer; border: none; font-size: 16px; transition: 0.3s; }
-        #dl-btn:hover { background: #218838; transform: scale(1.05); }
+        body { background: #0f0f0f; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+        .player-container { max-width: 800px; margin: auto; background: #000; border: 2px solid #e50914; }
+        iframe { width: 100%; aspect-ratio: 16/9; border: none; }
+        
+        /* Season Selection Buttons */
+        .season-nav { margin: 20px 0; }
+        .btn-s { background: #333; color: white; border: none; padding: 10px 20px; margin: 5px; cursor: pointer; font-weight: bold; border-radius: 5px; }
+        .btn-s.active { background: #e50914; }
+
+        /* Episode Lists */
+        .ep-list { display: none; margin: 20px auto; max-width: 800px; background: #1a1a1a; padding: 15px; border-radius: 10px; }
+        .ep-list.active { display: block; }
+        .btn-ep { background: #444; color: white; border: none; padding: 8px 15px; margin: 5px; cursor: pointer; border-radius: 3px; }
+        .btn-ep:hover { background: #e50914; }
+        .btn-ep.active { background: #e50914; font-weight: bold; }
+
+        .dl-section { margin-top: 20px; }
+        #dl-btn { background: #28a745; color: white; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -24,23 +30,36 @@
     <h2>Classroom of the Elite</h2>
 
     <div class="player-container">
-        <iframe id="main-player" src="" allow="autoplay" allowfullscreen></iframe>
+        <iframe id="main-player" src="" allowfullscreen></iframe>
     </div>
 
-    <div class="ep-box">
-        
-        <h3>Seasons 1-3 (Server 1)</h3>
-        <div id="drive-list">
-            <button class="btn-ep" onclick="playVideo('1UwCubKviH8Y1aowsDk1t_Nhma9mRFXJY', 1, 'drive', this)">EP 1</button>
-            <button class="btn-ep" onclick="playVideo('DRIVE_ID_2', 2, 'drive', this)">EP 2</button>
-            <button class="btn-ep" onclick="playVideo('DRIVE_ID_3', 3, 'drive', this)">EP 3</button>
+    <div class="season-nav">
+        <button class="btn-s active" id="btn-s1" onclick="showSeason(1)">Season 1</button>
+        <button class="btn-s" id="btn-s2" onclick="showSeason(2)">Season 2</button>
+        <button class="btn-s" id="btn-s3" onclick="showSeason(3)">Season 3</button>
+        <button class="btn-s" id="btn-s4" onclick="showSeason(4)">Season 4</button>
+    </div>
+
+    <div id="s1" class="ep-list active">
+        <h3>Season 1 Episodes</h3>
+        <button class="btn-ep" onclick="playDrive('1UwCubKviH8Y1aowsDk1t_Nhma9mRFXJY', 1)">Ep 1</button>
+        <button class="btn-ep" onclick="playDrive('S1_EP2_ID', 2)">Ep 2</button>
         </div>
 
-        <h3>Season 4 (Server 2)</h3>
-        <div id="dood-list">
-            <button class="btn-ep" onclick="playVideo('j1lu0r3vtv01', 5, 'dood', this)">EP 5 (S4)</button>
-        </div>
+    <div id="s2" class="ep-list">
+        <h3>Season 2 Episodes</h3>
+        <button class="btn-ep" onclick="playDrive('S2_EP1_ID', 1)">Ep 1</button>
+        <button class="btn-ep" onclick="playDrive('S2_EP2_ID', 2)">Ep 2</button>
+    </div>
 
+    <div id="s3" class="ep-list">
+        <h3>Season 3 Episodes</h3>
+        <button class="btn-ep" onclick="playDrive('S3_EP1_ID', 1)">Ep 1</button>
+    </div>
+
+    <div id="s4" class="ep-list">
+        <h3>Season 4 Episodes</h3>
+        <button class="btn-ep" onclick="playDood('j1lu0r3vtv01', 5)">Ep 5 (S4)</button>
     </div>
 
     <div class="dl-section">
@@ -48,72 +67,56 @@
     </div>
 
     <script>
-        // Global variables to store current video info
-        var currentID = ""; 
-        var currentType = "";
+        var currentID = "1UwCubKviH8Y1aowsDk1t_Nhma9mRFXJY";
+        var currentType = "drive";
 
-        /**
-         * playVideo: Unified function to handle both Drive and DoodStream
-         * @param {string} id - The video/file ID
-         * @param {number} num - Episode number for display
-         * @param {string} type - 'drive' or 'dood'
-         * @param {object} element - The button clicked
-         */
-        function playVideo(id, num, type, element) {
+        // Season tab switch karne ke liye
+        function showSeason(num) {
+            document.querySelectorAll('.ep-list').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.btn-s').forEach(el => el.classList.remove('active'));
+            document.getElementById('s' + num).classList.add('active');
+            document.getElementById('btn-s' + num).classList.add('active');
+        }
+
+        // Google Drive Player
+        function playDrive(id, num) {
             currentID = id;
-            currentType = type;
-            let player = document.getElementById('main-player');
-            let dlBtn = document.getElementById('dl-btn');
-
-            // 1. Set Player Source
-            if (type === 'drive') {
-                player.src = "https://drive.google.com/file/d/" + id + "/preview";
-            } else if (type === 'dood') {
-                player.src = "https://myvidplay.com/e/" + id;
-            }
-
-            // 2. Update UI (Active Class)
-            document.querySelectorAll('.btn-ep').forEach(btn => btn.classList.remove('active'));
-            if (element) {
-                element.classList.add('active');
-            }
-
-            // 3. Update Download Button Text
-            dlBtn.innerText = "📥 Download Episode " + num;
+            currentType = "drive";
+            document.getElementById('main-player').src = "https://drive.google.com/file/d/" + id + "/preview";
+            document.getElementById('dl-btn').innerText = "📥 Download Episode " + num;
+            
+            // Highlight Episode Button
+            document.querySelectorAll('.btn-ep').forEach(el => el.classList.remove('active'));
+            event.target.classList.add('active');
         }
 
-        /**
-         * startDL: Handles ads and directs to the correct download link
-         */
+        // DoodStream / MyVidPlay Player
+        function playDood(id, num) {
+            currentID = id;
+            currentType = "dood";
+            document.getElementById('main-player').src = "https://myvidplay.com/e/" + id;
+            document.getElementById('dl-btn').innerText = "📥 Download Episode " + num;
+            
+            document.querySelectorAll('.btn-ep').forEach(el => el.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Download logic
         function startDL() {
-            if (!currentID) {
-                alert("Please select an episode first!");
-                return;
+            window.open('https://omg10.com/4/10982181', '_blank'); // Ad Link
+            if(currentType === "drive") {
+                window.location.href = "https://drive.google.com/uc?export=download&id=" + currentID;
+            } else {
+                window.location.href = "https://myvidplay.com/d/" + currentID;
             }
-
-            // Ad link (omg10)
-            window.open('https://omg10.com/4/10982181', '_blank');
-
-            // Download Logic
-            setTimeout(() => {
-                if (currentType === "drive") {
-                    window.location.href = "https://drive.google.com/uc?export=download&id=" + currentID;
-                } else {
-                    // DoodStream / MyVidPlay download page
-                    window.location.href = "https://myvidplay.com/d/" + currentID;
-                }
-            }, 500); // Small delay to ensure ad opens first
         }
 
-        // Initialize: Load Episode 1 from Drive on page load
+        // Default Episode load
         window.onload = function() {
-            // Finding the first button to trigger initial play
-            let firstBtn = document.querySelector('.btn-ep');
-            if (firstBtn) {
-                firstBtn.click(); 
-            }
+            playDrive('1UwCubKviH8Y1aowsDk1t_Nhma9mRFXJY', 1);
         };
     </script>
 
 </body>
 </html>
+
