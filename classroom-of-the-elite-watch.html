@@ -124,23 +124,20 @@
                     <button class="btn-ep" onclick="play('19cNfNi9riQkpNi5vaJPHE0yg1dt6eeJi', '2', this, 'drive')">EP 2</button>
                     <button class="btn-ep" onclick="play('1xXfYn7hp-t9c0UPfGZTQaCAnfty10FR1', '3', this, 'drive')">EP 3</button>
                     <button class="btn-ep" onclick="play('15LUE5Al2covTuEkWSXcIHYF9QqVhH8Ne', '4', this, 'drive')">EP 4</button>
-                    <button class="btn-ep" onclick="play('j1lu0r3vtv01', '5', this, 'dood')">EP 5</button>`;
+                    <button class="btn-ep" onclick="play('j1lu0r3vtv01', '5', this, 'dood')">EP 5</button>`; // YE RAHI EPISODE 5 KI LINE
                 play('1JGQZsEsnV3rCxol4scspTZkT7SS88n98', '1', null, 'drive');
             }
         }
 
         function play(id, num, el, type) {
             currentType = type || "drive"; 
-            
             if(currentType === "dood") {
                 document.getElementById('main-player').src = "https://myvidplay.com/e/" + id;
             } else {
                 document.getElementById('main-player').src = "https://drive.google.com/file/d/" + id + "/preview";
             }
-
             document.querySelectorAll('.btn-ep').forEach(b => b.classList.remove('active'));
             if(el) el.classList.add('active');
-            
             currentFile = id;
             step = 0; 
             document.getElementById('dl-btn').innerText = "📥 DOWNLOAD EPISODE " + num;
