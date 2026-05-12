@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Classroom of the Elite - All Seasons</title>
+    <title>Watch Classroom of the Elite - AnimeFanTube</title>
     <style>
         body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 10px; text-align: center; }
-        .ad-slot { min-height: 50px; margin: 10px auto; background: #0a0a0a; display: flex; justify-content: center; align-items: center; border-radius: 8px; }
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border: 2px solid #ff69b4; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 0 15px rgba(255, 105, 180, 0.3); }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .label { text-align: left; font-size: 14px; font-weight: bold; color: #ff69b4; margin: 20px 5px 10px; text-transform: uppercase; border-left: 3px solid #ff69b4; padding-left: 8px; }
         .season-row { display: flex; overflow-x: auto; white-space: nowrap; padding: 10px 5px; gap: 10px; scrollbar-width: none; }
         .season-row::-webkit-scrollbar { display: none; }
-        .btn-s { background: #1a1a1a; color: #aaa; border: 1px solid #333; padding: 8px 25px; border-radius: 20px; cursor: pointer; transition: 0.3s; }
+        .btn-s { background: #1a1a1a; color: #aaa; border: 1px solid #333; padding: 8px 25px; border-radius: 20px; cursor: pointer; font-size: 13px; flex: 0 0 auto; transition: 0.3s; }
         .btn-s.active { background: #ff69b4; color: #fff; border-color: #ff69b4; font-weight: bold; }
         .ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)); gap: 10px; padding: 5px; }
-        .btn-ep { background: #111; color: #ff69b4; border: 1px solid #ff69b4; padding: 12px 5px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .btn-ep.active { background: #ff69b4; color: #fff; box-shadow: 0 0 12px rgba(255, 105, 180, 0.5); }
-        .btn-dl { background: linear-gradient(to right, #ff1493, #ff69b4); color: #fff; border: none; padding: 16px; width: 100%; border-radius: 12px; font-weight: bold; font-size: 16px; margin-top: 25px; cursor: pointer; }
+        .btn-ep { background: #111; color: #ff69b4; border: 1px solid #ff69b4; padding: 12px 5px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 12px; }
+        .btn-ep.active { background: #ff69b4; color: #fff; border-color: #ff69b4; box-shadow: 0 0 12px rgba(255, 105, 180, 0.5); }
+        .btn-dl { background: linear-gradient(to right, #ff1493, #ff69b4); color: #fff; border: none; padding: 16px; width: 100%; border-radius: 12px; font-weight: bold; font-size: 16px; margin-top: 25px; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4); }
     </style>
 </head>
 <body>
 
     <div class="video-box">
-        <iframe id="main-player" src="https://drive.google.com/file/d/1mLI2Q7uNC23G1rilqnzmW2dz52pg_aVC/preview" allowfullscreen allow="autoplay"></iframe>
+        <iframe id="main-player" 
+                src="https://drive.google.com/file/d/1mLI2Q7uNC23G1rilqnzmW2dz52pg_aVC/preview" 
+                allowfullscreen 
+                allow="autoplay" 
+                referrerpolicy="no-referrer"></iframe>
     </div>
 
     <div class="label">Select Season</div>
@@ -35,8 +38,7 @@
     </div>
 
     <div class="label" id="ep-label">Episodes (Season 1)</div>
-    <div class="ep-grid" id="ep-list">
-        </div>
+    <div class="ep-grid" id="ep-list"></div>
 
     <button id="dl-btn" class="btn-dl" onclick="startDL()">📥 DOWNLOAD EPISODE 1</button>
 
@@ -115,6 +117,7 @@
             let player = document.getElementById('main-player');
             
             if(currentType === "dood") {
+                // IMPORTANT: MyVidPlay requires a clean referrer or no-referrer
                 player.src = "https://myvidplay.com/e/" + id;
             } else {
                 player.src = "https://drive.google.com/file/d/" + id + "/preview";
@@ -142,7 +145,7 @@
             }
         }
 
-        // Initialize Season 1 on load
+        // Auto-load Season 1
         window.onload = function() {
             changeSeason(1, document.querySelector('.btn-s'));
         };
